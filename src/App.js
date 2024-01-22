@@ -19,6 +19,10 @@ function App() {
   const [openFeatures, setOpenFeatures] = useState(false);
   const [openCompany, setOpenCompany] = useState(false);
 
+  const handleOpenMenu = () =>{
+
+  }
+
   return (
     <>
       <header className="p-5 flex items-center justify-between">
@@ -27,8 +31,8 @@ function App() {
           <nav className="navbar">
             <div>
               <button
-              onClick={() =>setOpenFeatures(!openFeatures)}
-              className="flex items-center justify-start"
+                onClick={() => setOpenFeatures(!openFeatures)}
+                className="flex items-center justify-start"
               >
                 Features{" "}
                 {openFeatures ? (
@@ -88,7 +92,51 @@ function App() {
             </div>
           </nav>
         </div>
+        <div className="lg:hidden">
+          <button className={handleOpenMenu}>
+            <img src={menuOpen} alt="" className="menu-button"/>
+          </button>
+        </div>
+        <div className="hidden lg:block">
+            <button className="mr-10 opacity-75">Login</button>
+            <button className="border-2 border-black opacity-75 px-6 py-2 rounded-2xl">Register</button>
+        </div>
       </header>
+      <section className="flex flex-col-reverse py-20 md:grid md:gap-10 md:grid-cols-2 md:place-items-center max-w-4xl lg:max-w-5xl md:mx-auto">
+        <article className="text-center md:text-left px-5 xl:px-0 mt-10 md:mt-0">
+          <h1 className="font-bold text-4xl lg:text-6xl xl:text-6xl mb-5">
+            Make remote work
+          </h1>
+          <p className="mb-5">
+            {" "}
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <button className="bg-black rounded-lg shadow text-white font-bold hover:opacity-75 transition-all duration-150 pt-3 pb-2 px-6 cursor-pointer">
+            Learn More
+          </button>
+          <ul className="grid grid-cols-4 gap-1 mt-10 place-items-center md:place-items-start">
+            <li>
+              <img src={databiz} alt="" className="w-16 md:w-24" />
+            </li>
+            <li>
+              <img src={audiophile} alt="" className="w-16 md:w-24" />
+            </li>
+            <li>
+              <img src={meet} alt="" className="w-16 md:w-24" />
+            </li>
+            <li>
+              <img src={maker} alt="" className="w-16 md:w-24" />
+            </li>
+          </ul>
+        </article>
+        <article>
+          <picture>
+            <source media="(min-width: 768px)" srcSet={desktop} />
+            <img src={mobile} alt="" className="w-full" />
+          </picture>
+        </article>
+      </section>
     </>
   );
 }
