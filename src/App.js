@@ -19,8 +19,17 @@ function App() {
   const [openFeatures, setOpenFeatures] = useState(false);
   const [openCompany, setOpenCompany] = useState(false);
 
-  const handleOpenMenu = () =>{
+  const handleOpenMenu = () => {
+    const navbar = document.querySelector(".navbar")
+    const menuButton = document.querySelector(".menu-button")
 
+    navbar.classList.toggle("open")
+
+    if (navbar.classList.contains("open")) {
+      menuButton.src = closeMenu
+    } else {
+      menuButton.src = menuOpen
+    }
   }
 
   return (
