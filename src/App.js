@@ -102,7 +102,7 @@ function App() {
           </nav>
         </div>
         <div className="lg:hidden">
-          <button className={handleOpenMenu}>
+          <button onClick={handleOpenMenu}>
             <img src={menuOpen} alt="" className="menu-button"/>
           </button>
         </div>
